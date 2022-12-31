@@ -16,7 +16,8 @@ You sluggishly stumble towards the window to find the root of the sound. Peeking
 
 Heavy snowfall piercing the veil of night that covered the town of Veliwood, which in itself wouldn't be considered strange, were it not for the fact that it is midsummer. Before you could gather your thoughts you hear a knock on your door. 
 
-Confused, you saunter over to the door and open0 it to find a beautiful woman, white as snow from her long pointy ears to her bare feet, donning long snow white robes. Two big horns protude from the back of her head and wrap around it coming towards the forehead.
+    #Place Door
+Confused, you saunter over to the door and open it to find a beautiful woman, white as snow from her long pointy ears to her bare feet, donning long snow white robes. 
 
     #Speaker Eira
 Pant pant Excuse me, sir. I'm sorry to bother you on this gloomy night, but I'm afraid I got caught in the middle of the storm. May I please come in?
@@ -31,6 +32,7 @@ Pant pant Excuse me, sir. I'm sorry to bother you on this gloomy night, but I'm 
 
 === accepted ===
 
+    #Place Inside
     #Speaker Narrator
 You usher her in and guide her towards the living room after shutting the door. There you accomodate her and after few moments you notice that the room is quite colder than it was before.
 
@@ -436,12 +438,14 @@ I was being hunted by a party of people. They attacked me and I fled, wounded, u
     
 === morning ===
 
+    #Place Window
     #Speaker Narrator
 You wake up in the morning and go directly to your window to see if anything changed. However, the weather outside is still just as if it was winter. The blizzard rages on and the freezing cold still lingers in the air.
 
     #Speaker Narrator
 You go check on your guest and find her right where you left her, still soundly asleep. You figure it's normal for her to be tired after all she lived through yesterday.
     
+    #Place Inside
     -> morning_choices
 
     = morning_choices
@@ -578,11 +582,13 @@ You go check on your guest and find her right where you left her, still soundly 
 
 = clinic
 
+    #Place Outside
     #Speaker Narrator
     After readying up, you and Eira head to your clinic in the heart of Veliwood. On your way there you are stopped by many of the towns residents that seem curious about your companion and complain about the weather.
     
     { hide_identity: As you promised her, you try and hide her identity introducing her as a friend from far away who's gonna spend some time with you. | You introduce her to the towns people saying as little as you can, not to arouse suspicion. All the way through your awkward introductions she seems extremely uncomfortable. }
     
+    #Place Clinic
     You finally arrive at the clinic and waiting right in front of the door you find a whole line of people. 
     
     They all look at you and begin to berate you with complaints of aches and diseases of all kinds, most likely as a result of this sudden shift in the weather.
@@ -628,6 +634,7 @@ You go check on your guest and find her right where you left her, still soundly 
     #Speaker Narrator
     You leave Eira home and leave for work. On your way to the clinic you are stopped by lots of people who complain to you about how the weird climate shift that took place last night has got them feeling under the weather.
     
+    #Place Clinic
     #Speaker Narrator
     When you arrive at your office, you find a tremendously long line of patients, probably because of the same reason you had discussed with so many people on your way. 
     
@@ -681,6 +688,7 @@ You go check on your guest and find her right where you left her, still soundly 
     
     The elder says she will find something for her, and so you leave for work. On your way to the clinic you are stopped by lots of people who complain to you about how the weird climate shift that took place last night has got them feeling under the weather.
     
+    #Place Clinic
     When you arrive at your office, you find a tremendously long line of patients, probably because of the same reason you had discussed with so many people on your way. You spend the whole day tending to patients and get home late at night.
 
     Eira greets you at the door and you talk for a few minutes about her new job at the town's bakery. Too tired for anything else, the both of you call it a day and go to sleep.
@@ -691,6 +699,7 @@ You go check on your guest and find her right where you left her, still soundly 
 ->DONE
 === complaints ===
 
+    #Place Door
     #Speaker Narrator
     A month flies by quickly and the weather doesn't seem to improve since Eira's arrival. The townsfolk have begun calling her bad omen and some of them even go as far as to call her witch.
     
@@ -707,6 +716,7 @@ You go check on your guest and find her right where you left her, still soundly 
     
     She began taking care of the shores while you were out, claiming that doing so at least she felt like she wasn't freeloading as much.
     
+    #Place Inside
     You knew all this, but you were to busy dealing with your neighbours complaints to even have the time to talk to her. That was until tonight. She had been waiting for you to come back home by the door to confront you when you came home.
     
     -> complaints_choices
@@ -720,6 +730,7 @@ You go check on your guest and find her right where you left her, still soundly 
     
     She has stated to you several times how awful she feels about this things happening because of her. She constantly reminds you that you are in no need to aid her and that you could cast her out anytime you wanted.
     
+    #Place Inside
     Tonight, when you arrive home you find her waiting for you at the door to confront you.
     
     -> complaints_choices
@@ -729,6 +740,7 @@ You go check on your guest and find her right where you left her, still soundly 
     #Speaker Narrator
     The townsfolk have been knocking at your door every other day to demand of you that she leaves and you have ignored their demands all this time. However, the biggest issues come with Eira's mood.
     
+    #Place Inside
     She has been feeling down and her guilt has been growing by the day. She has made this clear to you more frequently during the last few weeks and today she has finally decided to confront you about it.
     
     -> complaints_choices
@@ -822,6 +834,7 @@ You go check on your guest and find her right where you left her, still soundly 
     
 === hunters_talk ===
 
+    #Place Door
     #Speaker Narrator
     Still hearing the constant knocking you walk to the door and open it to find quite an arrangement of personalities. 
     
@@ -944,6 +957,7 @@ You go check on your guest and find her right where you left her, still soundly 
             -> flee
 === home_talk ===
 
+    #Place Inside
     #Speaker Narrator
     You and the elven lady come into the house and you escort her towards the living room. There shaking in fear is Eira, who pales at the sight of the elf.
     
@@ -1002,6 +1016,7 @@ You go check on your guest and find her right where you left her, still soundly 
                 
 === self_defense_ending ===
 
+    #Place Outside
     #Speaker Narrator
     Eira sees the bow pointed at her and finally looses it. Her visage shifts to a more lizard-like form and she begins to grow in size until her gargantuan white figure collapses your house.
     
@@ -1169,6 +1184,7 @@ That can't be... What do you think the best course of action is?
 
 = flee_attempt
 
+    #Place Outside
     #Speaker Narrator
     You wait until the arranged hour and get to the door. You step outside, but can see nothing through the veil of night. Eira follows you and the two of you begin to slowly make your way towards the forest.
     
@@ -1195,6 +1211,7 @@ What?!
     #Speaker Narrator
 A pair of white skin wings sprout from her back and she takes off flying into the sky carrying you. Bolts keep flying in your direction but none connect with you and both of you fly off into the horizon.
 
+    #Place Mountain
 After flying for a long time you land on a mountain. After a few minutes the mountain gradually becomes shrouded by dark clouds. Both of you are safe, but for how long.
 
 * [We are okay.] 

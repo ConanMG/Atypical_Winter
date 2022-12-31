@@ -9,35 +9,34 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
 
-    public TextAsset inkFile;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     public GameObject choicePanel;
-    public Button choiceBtn;
-    public GameObject optionPanel;
+    public GameObject choiceBtn;
+    public Animator anim;
+
     public static event Action<Story> OnCreateStory;
     private bool isWriting = false;
     private string currentSentence = "";
 
-    public Animator anim;
+    public TextAsset inkFile;
+    public Story story;
     List<string> tags;
 
-    public Story story;
 
     void Start()
     {
         story = new Story(inkFile.text);
         tags = new List<string>();
+        StartDialogue();
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue()
     {
         story = new Story(inkFile.text);
         if (OnCreateStory != null) OnCreateStory(story);
 
         DisplayNextSentence();
-
-        anim.SetBool("isOpen", true);
 
     }
 
@@ -98,6 +97,20 @@ public class DialogueManager : MonoBehaviour
                 case "Emotion":
                     break;
                 case "Place":
+                    switch (param)
+                    {
+                        case "Inside":
+                            
+                            break;
+                        case "Outside":
+                            break;
+                        case "Clinic":
+                            break;
+                        case "Mountain":
+                            break;
+                        case "Window":
+                            break;
+                    }
                     break;
                 case "Speaker":
                     nameText.text = param;
@@ -111,23 +124,26 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i < story.currentChoices.Count; i++)
         {
             Choice choice = story.currentChoices[i];
-            Button button = CreateChoiceView(choice.text);
+            GameObject button = CreateChoiceView(choice.text);
 
-            button.onClick.AddListener(delegate {
+            button.GetComponent<Button>().onClick.AddListener(delegate {
                 OnClickChoiceButton(choice);
             });
         }
     }
 
-    Button CreateChoiceView(string text)
+    GameObject CreateChoiceView(string text)
     {
         choicePanel.SetActive(true);
 
-        Button choice = Instantiate(choiceBtn) as Button;
+        GameObject choice = Instantiate(choiceBtn) as GameObject;
         choice.transform.SetParent(choicePanel.transform, false);
 
-        Text choiceText = choice.GetComponentInChildren<Text>();
+        TextMeshProUGUI choiceText = choice.GetComponentInChildren<TextMeshProUGUI>();
         choiceText.text = text;
+
+        HorizontalLayoutGroup layoutGroup = choice.GetComponent<HorizontalLayoutGroup>();
+        layoutGroup.childForceExpandHeight = false;
 
         return choice;
     }
@@ -155,6 +171,15 @@ public class DialogueManager : MonoBehaviour
     {
         StartCoroutine(TypeWriter("THE END"));
         Debug.Log("End of conversation");
+
         anim.SetBool("isOpen", false);
+
+        choicePanel.SetActive(true);
+        GameObject choice = CreateChoiceView("Restart?");
+        choice.GetComponent<Button>().onClick.AddListener(delegate {
+            StartDialogue();
+            choicePanel.SetActive(false);
+            RemoveChildren();
+        });
     }
 }
