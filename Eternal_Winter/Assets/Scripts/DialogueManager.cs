@@ -13,7 +13,9 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public GameObject choicePanel;
     public GameObject choiceBtn;
-    public Animator anim;
+    public GameObject myCanvas;
+    public GameObject characterFace;
+    public GameObject characterBody;
 
     public static event Action<Story> OnCreateStory;
     private bool isWriting = false;
@@ -42,12 +44,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-
-        if (story.currentChoices.Count != 0)
-        {
-            ShowOptions();
-        }
-        else if (!story.canContinue)
+        if (!story.canContinue)
         {
             if (!isWriting)
             {
@@ -66,6 +63,14 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            StopAllCoroutines();
+            dialogueText.text = currentSentence;
+            isWriting = false;
+        }
+
+        if (story.currentChoices.Count != 0)
+        {
+            ShowOptions();
             StopAllCoroutines();
             dialogueText.text = currentSentence;
             isWriting = false;
@@ -94,21 +99,77 @@ public class DialogueManager : MonoBehaviour
 
             switch (prefix)
             {
+                case "Hide":
+                    characterBody.SetActive(false);
+                    characterFace.SetActive(false);
+                    break;
+                case "Show":
+                    characterBody.SetActive(true);
+                    characterFace.SetActive(true);
+                    break;
+                case "Body":
+                    switch (param)
+                    {
+                        case "Bloody":
+                            characterBody.GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Sprites/Eira_Sprite")[1];
+                            break;
+                        case "Relaxed":
+                            characterBody.GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Sprites/Eira_Sprite")[2];
+                            break;
+                    }
+                    break;
                 case "Emotion":
+                    switch (param)
+                    {
+                        case "Sad":
+                            characterFace.GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Sprites/Eira_Sprite")[10];
+                            break;
+                        case "Happy":
+                            characterFace.GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Sprites/Eira_Sprite")[12];
+                            break;
+                        case "Annoyed":
+                            characterFace.GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Sprites/Eira_Sprite")[3];
+                            break;
+                        case "Overjoyed":
+                            characterFace.GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Sprites/Eira_Sprite")[9];
+                            break;
+                        case "Cry":
+                            characterFace.GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Sprites/Eira_Sprite")[8];
+                            break;
+                        case "Embarrassed":
+                            characterFace.GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Sprites/Eira_Sprite")[6];
+                            break;
+                        case "Indifferent":
+                            characterFace.GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Sprites/Eira_Sprite")[4];
+                            break;
+                        case "Smile":
+                            characterFace.GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Sprites/Eira_Sprite")[11];
+                            break;
+                        case "Furious":
+                            characterFace.GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Sprites/Eira_Sprite")[7];
+                            break;
+                        case "Bash":
+                            characterFace.GetComponent<Image>().sprite = Resources.LoadAll<Sprite>("Sprites/Eira_Sprite")[5];
+                            break;
+                    }
                     break;
                 case "Place":
                     switch (param)
                     {
                         case "Inside":
-                            
+                            myCanvas.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Living_Room_Pixelart");
                             break;
                         case "Outside":
+                            myCanvas.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Doorstep_Pixelart");
                             break;
                         case "Clinic":
+                            myCanvas.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Clinic_Pixelart");
                             break;
                         case "Mountain":
+                            myCanvas.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Snowy_Mountain_Pixelart");
                             break;
                         case "Window":
+                            myCanvas.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Window_Pixelart");
                             break;
                     }
                     break;
@@ -170,16 +231,12 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         StartCoroutine(TypeWriter("THE END"));
-        Debug.Log("End of conversation");
-
-        anim.SetBool("isOpen", false);
 
         choicePanel.SetActive(true);
         GameObject choice = CreateChoiceView("Restart?");
+
         choice.GetComponent<Button>().onClick.AddListener(delegate {
-            StartDialogue();
-            choicePanel.SetActive(false);
-            RemoveChildren();
+            new SceneLoader().LoadScene("MainMenu");
         });
     }
 }

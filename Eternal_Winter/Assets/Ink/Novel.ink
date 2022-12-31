@@ -16,11 +16,12 @@ You sluggishly stumble towards the window to find the root of the sound. Peeking
 
 Heavy snowfall piercing the veil of night that covered the town of Veliwood, which in itself wouldn't be considered strange, were it not for the fact that it is midsummer. Before you could gather your thoughts you hear a knock on your door. 
 
-    #Place Door
+    #Show Eira
+    #Place Outside
 Confused, you saunter over to the door and open it to find a beautiful woman, white as snow from her long pointy ears to her bare feet, donning long snow white robes. 
 
     #Speaker Eira
-Pant pant Excuse me, sir. I'm sorry to bother you on this gloomy night, but I'm afraid I got caught in the middle of the storm. May I please come in?
+\*Pant* *pant* Excuse me, sir. I'm sorry to bother you on this gloomy night, but I'm afraid I got caught in the middle of the storm. May I please come in?
 
  * Of course, please come in.
     -> accepted
@@ -36,6 +37,7 @@ Pant pant Excuse me, sir. I'm sorry to bother you on this gloomy night, but I'm 
     #Speaker Narrator
 You usher her in and guide her towards the living room after shutting the door. There you accomodate her and after few moments you notice that the room is quite colder than it was before.
 
+    #Emotion Happy
     #Speaker Eira
 Thank you, kind sir. I'm in your debt, I might have frozen out there.
 
@@ -57,6 +59,7 @@ Right, miss Eira.
     
     * { examined && !checked_wound } How did you get that gash on your abdomen?
     
+    #Emotion Sad
     #Speaker Eira
         I... got attacked by a wolf. I was running from them when I got to your house.
     
@@ -70,6 +73,7 @@ Right, miss Eira.
     
     * { examined && checked_wound } May I see that wound of yours? I am a doctor you know
     
+    #Emotion Sad
     #Speaker Eira
         NO! No... I'm sorry for screaming. I just don't wish bother you any further.
     
@@ -80,6 +84,7 @@ Right, miss Eira.
     
     * Where did you come from?
     
+    #Emotion Sad
     #Speaker Eira
         I came from... a hut in the forest where I live alone. It was destroyed by the storm and I was forced to move.
         
@@ -92,6 +97,7 @@ Right, miss Eira.
         
     * Are you not cold? Your limbs are covered in frostbite.
     
+    #Emotion Sad
     #Speaker Eira
         Having been in this mountains for so long, I'm somehow accustomed to the freezing cold that comes with winter. Besides, the cold never bothered me anyway.
         
@@ -149,9 +155,11 @@ What are you talking about? I- I don't know what you mean.
     
 === angered_end ===
 
+    #Emotion Annoyed
     #Speaker Eira
 I am so tired of you puny little creature. I was trying not to make a ruckuss, but I grow tired of your aggression against me. You can blame what is about to happen on no other than yourself.
 
+    #Emotion Furious
     #Speaker Narrator
 Before you get a moment to retaliate Eira's mouth opens gleaming with a supernatural aura and a burst of frigid energy springs towards you completely freezing you in place. 
 
@@ -160,9 +168,11 @@ The last thing you see is her figure approaching to your frost statue of a body 
 ->END
 === rejected_end ===
 
+    #Emotion Indifferent
     #Speaker Eira
 You leave me no choice then. I'll have to risk it. You brought this upon yourself you insolent little creature.
 
+    #Emotion Furious
     #Speaker Narrator
 The lady's charming visage abruptly transmogrifies into that of a white-scaled lizard-like beast with piercing draconic eyes and claws sprout from the tip of her fingers. 
 
@@ -180,6 +190,7 @@ The long cascade of snow white that flows from atop her head ending on a blue hu
 
 Though some areas of her body seem to be frostbit she doesn't show the slightest sign of hypothermia. Nevertheless, you can see a shade of crimson that pours from under her right hand that tightly grips her left side.
 
+    #Emotion Sad
     #Speaker Eira
 Is something wrong, sir. It's getting quite cold in here, may I please come in?
 
@@ -197,6 +208,7 @@ Is something wrong, sir. It's getting quite cold in here, may I please come in?
         ~ checked_wound = true
         ~ lies_caught++
         
+    #Emotion Sad
     #Speaker Eira
         It's nothing... I... got hit by a branch that was flown by this fierce wind we are having.
         
@@ -206,9 +218,11 @@ Is something wrong, sir. It's getting quite cold in here, may I please come in?
         -> examination_choices
 === healed ===
 
+    #Body Relaxed
     #Speaker Narrator
 Eira looks at you right in the eye and the room falls silent for a moment. The guarded façade she had been keeping during this whole time slowly drops as she looks at her abdomen, lifts her hand from it and looks right back at you.
 
+    #Emotion Happy
     #Speaker Eira
 Don't be too harsh, doctor.
 
@@ -264,6 +278,7 @@ I was being hunted by a party of people. They attacked me and I fled, wounded, u
     
     * Why were they hunting you?
     
+    #Emotion Sad
     #Speaker Eira
         I... I don't know, I'm sorry. However I can tell you that I had no ill intention towards them and they attacked me out of nowhere.
         
@@ -271,6 +286,7 @@ I was being hunted by a party of people. They attacked me and I fled, wounded, u
     
     * Do you know if they followed you?
         
+    #Emotion Sad
     #Speaker Eira
         I am not sure, but I hardly doubt it. I ran really fast and with this storm on top of that.
         
@@ -280,6 +296,7 @@ I was being hunted by a party of people. They attacked me and I fled, wounded, u
         
         Eira gives you a sorrowful yet sweet smile.
         
+    #Emotion Blush
     #Speaker Eira
         I wasn't, thanks for asking. I don't think anyone has been that concerned by me in... Well, ever actually.
 
@@ -289,6 +306,7 @@ I was being hunted by a party of people. They attacked me and I fled, wounded, u
         
     * Do you have a place to get back too?
     
+    #Emotion Sad
     #Speaker Eira
         Not really, most of my life I have been traveling from one place to another. I don't have a family or anyone to go back to either.
         
@@ -306,6 +324,7 @@ I was being hunted by a party of people. They attacked me and I fled, wounded, u
     #Speaker Eira
         You have given me so much already, I don't want to keep asking for things, but could you do me a favor? 
         
+    #Emotion Sad
         Could you pretend that I'm an old acquaintance of yours? I just don't want the people who followed me to possibly find me.
         
             ** Sure, I can do that for you.
@@ -337,6 +356,7 @@ I was being hunted by a party of people. They attacked me and I fled, wounded, u
     #Speaker Narrator
         She looks at you, confused.
         
+    #Emotion Blush
     #Speaker Eira
         Do you even listen to what you are saying?! You don't even know me and I'm not answering most of your questions. I could be a serial killer for all you know. Are you out of your mind?!
         
@@ -349,6 +369,7 @@ I was being hunted by a party of people. They attacked me and I fled, wounded, u
             Besides if you wanted to do something you would have done it already, right
             
     #Speaker Narrator
+    #Emotion Embarrassed
             Her cheeks turn a light shade of red as she looks down.
             
     #Speaker Eira
@@ -375,6 +396,7 @@ I was being hunted by a party of people. They attacked me and I fled, wounded, u
     #Speaker You
     Well, it's getting late and I have to work tomorrow. You should go to sleep too.
     
+    #Emotion Sad
     #Speaker Eira
     Do you have a place where I can bed down for the evening?
     
@@ -385,6 +407,7 @@ I was being hunted by a party of people. They attacked me and I fled, wounded, u
         
         Don't worry, what kind of host would let his guest sleep on the couch?
         
+    #Emotion Happy
     #Speaker Eira
         If you insist... Thank you once again, doctor. Good night.
         
@@ -396,6 +419,7 @@ I was being hunted by a party of people. They attacked me and I fled, wounded, u
         
     * You can take the couch.
         
+    #Emotion Smile
     #Speaker Eira
         Thanks, I couldn't ask for anything else. Have a good night.
         
@@ -406,9 +430,11 @@ I was being hunted by a party of people. They attacked me and I fled, wounded, u
         
     * We could both fit in my bed.
     
+    #Emotion Embarrassed
     #Speaker Eira
         T-That wouldn't be appropriate. I will take the couch if you don't mind, thank you.
         
+    #Emotion Annoyed
     #Speaker Narrator
         She looks at you with an angered expression from which you gather your quick indecent response wasn't well received.
         
@@ -417,11 +443,12 @@ I was being hunted by a party of people. They attacked me and I fled, wounded, u
         
         ~ affection--
         
-        { examination_outside | examination_inside: ->morning }
-        { not examination_outside | not examination_inside: -> bleed_out_end }
+        { not examination_outside && not accepted.examination_inside: -> bleed_out_end | ->morning }
+    #Hide Eira
         
 === bleed_out_end ===
 
+    #Body Bloody
     #Speaker Narrator
     You wake up in the morning and go directly to your window to see if anything changed. However, the weather outside is still just as if it was winter. The blizzard rages on and the freezing cold still lingers in the air.
 
@@ -470,12 +497,15 @@ You go check on your guest and find her right where you left her, still soundly 
             
 === wake_up ===
     
+    { not examined: -> bleed_out_end }
     #Speaker Narrator
         You get on your knees next to Eira's figure and gently shake her awake. She slowly comes to conciousness and looks at you scared, before the memory of what happened last night seems to sink in. 
         
     #Speaker Narrator
         Then, her calm look from the day before comes back to her face. She stretches and yawns.
         
+    #Emotion Happy
+    #Show Eira
     #Speaker Eira
         Good morning, doctor.
         
@@ -488,6 +518,7 @@ You go check on your guest and find her right where you left her, still soundly 
     #Speaker You
         What do you plan to do now?
         
+    #Emotion Sad
     #Speaker Eira
         I... I don't know. I guess I need to lay low for a while, but I don't know where I could do that.
         
@@ -514,7 +545,8 @@ You go check on your guest and find her right where you left her, still soundly 
                 
             * We can ask around the town.<> 
                 Who knows? Maybe someone is looking for a new employee.
-                
+            
+    #Emotion Indifferent    
     #Speaker Eira
                 That would be fine with me, though I would prefer to be working under your care.
                 
@@ -526,6 +558,7 @@ You go check on your guest and find her right where you left her, still soundly 
     #Speaker You
                 As you can see I don't really have the time to take care of them on my own. In fact, I was thinking of hiring a maid a from town to take care of it.
                 
+    #Emotion Sad
     #Speaker Eira
                 I could certainly take care of that, yes. But, wouldn't people begin to suspect things? 
                 
@@ -537,6 +570,7 @@ You go check on your guest and find her right where you left her, still soundly 
                 * It's really no problem at all<>
                 , besides they will start rumours anyways. There aren't many other things that can get people's interest in a small town as gossip does.
                     
+    #Emotion Smile
     #Speaker Eira
                 If you insist. I will do this for you, then.
                 
@@ -552,12 +586,14 @@ You go check on your guest and find her right where you left her, still soundly 
     #Speaker You
             Maybe you could help with that.
         
+    #Emotion Sad
     #Speaker Eira
             I don't know... I don't think I'm qualified for that.
             
             * It will be fine. I just need you to greet the clients.<>
                 You would be kind of a receptionist and every now and then I would need you to fetch me somethings, but nothing further than that.
-                
+        
+    #Emotion Smile        
     #Speaker Eira
                 If you think I'm fit for it, then I can take care of it.
                 
@@ -604,12 +640,14 @@ You go check on your guest and find her right where you left her, still soundly 
     #Speaker You
     How was that for a first day?
     
+    #Emotion Indifferent
     #Speaker Eira
     Is this always so busy?
     
     #Speaker You
     No, it hasn't being this crowded for quite a while actually. Seems this shift of the weather sure took a toll on people's health.
     
+    #Emotion Sad
     #Speaker Eira
     I'm sorry...
     
@@ -618,12 +656,14 @@ You go check on your guest and find her right where you left her, still soundly 
     #Speaker You
     Did you say something?
     
+    #Emotion Indifferent
     #Speaker Eira
     No, nevermind. It's nothing.
     
     #Speaker You
     So, do you think you could stay and lend me a hand?
     
+    #Emotion Happy
     #Speaker Eira
     Yes, gladly.
     
@@ -631,6 +671,7 @@ You go check on your guest and find her right where you left her, still soundly 
     
 = housewife
 
+    #Hide Eira
     #Speaker Narrator
     You leave Eira home and leave for work. On your way to the clinic you are stopped by lots of people who complain to you about how the weird climate shift that took place last night has got them feeling under the weather.
     
@@ -647,6 +688,8 @@ You go check on your guest and find her right where you left her, still soundly 
     #Speaker Narrator
     Standing at the kitchen's door, you see Eira, fully geared up, apron on and spoon in hand.
     
+    #Show Eira
+    #Emotion Happy
     #Speaker Eira
     How was your day?
     
@@ -673,6 +716,7 @@ You go check on your guest and find her right where you left her, still soundly 
     #Speaker You
     That would be wonderful, thank you. So, can I take this as to you staying then?
     
+    #Emotion Sad
     #Speaker Eira
     I think so, at least for a few weeks. Until I can find another place to be.
     
@@ -683,6 +727,7 @@ You go check on your guest and find her right where you left her, still soundly 
     
 = town
 
+    #Hide Eira
     #Speaker Narrator
     You take Eira to the elder's house and ask him if there is something where she could be needed. 
     
@@ -691,6 +736,7 @@ You go check on your guest and find her right where you left her, still soundly 
     #Place Clinic
     When you arrive at your office, you find a tremendously long line of patients, probably because of the same reason you had discussed with so many people on your way. You spend the whole day tending to patients and get home late at night.
 
+    #Show Eira
     Eira greets you at the door and you talk for a few minutes about her new job at the town's bakery. Too tired for anything else, the both of you call it a day and go to sleep.
     
     -> complaints
@@ -699,6 +745,7 @@ You go check on your guest and find her right where you left her, still soundly 
 ->DONE
 === complaints ===
 
+    #Hide Eira
     #Place Door
     #Speaker Narrator
     A month flies by quickly and the weather doesn't seem to improve since Eira's arrival. The townsfolk have begun calling her bad omen and some of them even go as far as to call her witch.
@@ -716,6 +763,7 @@ You go check on your guest and find her right where you left her, still soundly 
     
     She began taking care of the shores while you were out, claiming that doing so at least she felt like she wasn't freeloading as much.
     
+    #Show Eira
     #Place Inside
     You knew all this, but you were to busy dealing with your neighbours complaints to even have the time to talk to her. That was until tonight. She had been waiting for you to come back home by the door to confront you when you came home.
     
@@ -730,6 +778,7 @@ You go check on your guest and find her right where you left her, still soundly 
     
     She has stated to you several times how awful she feels about this things happening because of her. She constantly reminds you that you are in no need to aid her and that you could cast her out anytime you wanted.
     
+    #Show Eira
     #Place Inside
     Tonight, when you arrive home you find her waiting for you at the door to confront you.
     
@@ -740,6 +789,7 @@ You go check on your guest and find her right where you left her, still soundly 
     #Speaker Narrator
     The townsfolk have been knocking at your door every other day to demand of you that she leaves and you have ignored their demands all this time. However, the biggest issues come with Eira's mood.
     
+    #Show Eira
     #Place Inside
     She has been feeling down and her guilt has been growing by the day. She has made this clear to you more frequently during the last few weeks and today she has finally decided to confront you about it.
     
@@ -747,6 +797,7 @@ You go check on your guest and find her right where you left her, still soundly 
     
 = complaints_choices
 
+    #Emotion Sad
     #Speaker Eira
     I cannot take this anymore. I am being an inconvinience to you and a nuisance to everyone in town. I have to leave and you know it.
     
@@ -755,6 +806,7 @@ You go check on your guest and find her right where you left her, still soundly 
     
     { affection >= 5: -> confession }
     
+    #Emotion Indifferent
     #Speaker Eira
     Right. But, regardless I cannot stay any longer. I would just be making everyone uncomfortable. I-
     
@@ -762,6 +814,7 @@ You go check on your guest and find her right where you left her, still soundly 
     
 = confession
 
+    #Emotion Sad
     #Speaker Eira
     Yeah... about that. Doctor, there is something I've been meaning to tell you. I am not what I might look like.
     
@@ -772,7 +825,7 @@ You go check on your guest and find her right where you left her, still soundly 
     #Speaker You
     I know you are not a humanoid being like me or the townsfolk. The speed at which your wounds heal, your resistance to this freezing cold, your high tolerance to pain, not to mention this weather that seems to follow you around. I know.
     
-    * You are indeed an ice witch.
+    * You are an ice witch.
     
         ~ guessed = false
         
@@ -793,6 +846,7 @@ You go check on your guest and find her right where you left her, still soundly 
     
 = explanation
 
+    #Emotion Sad
     #Speaker Eira
     { guess && not guessed: You are halfway right. I am indeed no humanoid, but that's not exactly what I am. <br><br> You remember that sound you heard during the first day of the blizzard? <br><br> That was me, I fell from the sky that day. <br><br> I am a white dragon. }
     
@@ -818,6 +872,7 @@ You go check on your guest and find her right where you left her, still soundly 
     
     While you are talking you hear a knock on your door once again. Right as the door sounds Eira's { relaxed: calmed } demeanor rapidly shifts into panic. Her face shows an expression of pure fear like if she had seen a ghost.
     
+    #Emotion Furious
     #Speaker Eira
     { hunted: They are here. The hunters. }
     
@@ -834,6 +889,7 @@ You go check on your guest and find her right where you left her, still soundly 
     
 === hunters_talk ===
 
+    #Hide Eira
     #Place Door
     #Speaker Narrator
     Still hearing the constant knocking you walk to the door and open it to find quite an arrangement of personalities. 
@@ -964,17 +1020,21 @@ You go check on your guest and find her right where you left her, still soundly 
     #Speaker Narrator
     You sit next to Eira and the lady takes a seat on a chair in front of you.
     
+    #Show Eira
+    #Speaker You
     This is Eira, she is my assistant. She has been living with me for a month.
     
     #Speaker ???
     Pleased to meet you miss Eira.
     
+    #Emotion Sad
     #Speaker Eira
     You too, miss...
     
     #Speaker Alaida
     Alaida, Alaida Quilvik.
     
+    #Emotion Sad
     #Speaker Eira
     Pleased to meet you miss Alaida.
     
@@ -1017,6 +1077,7 @@ You go check on your guest and find her right where you left her, still soundly 
 === self_defense_ending ===
 
     #Place Outside
+    #Emotion Furious
     #Speaker Narrator
     Eira sees the bow pointed at her and finally looses it. Her visage shifts to a more lizard-like form and she begins to grow in size until her gargantuan white figure collapses your house.
     
@@ -1041,6 +1102,7 @@ You go check on your guest and find her right where you left her, still soundly 
     #Speaker You
     Why didn't you defend yourself?! Y-you could have-
     
+    #Emotion Cry
     #Speaker Eira
     Shh, it's okay. It's better this way. I don't want to live hiding anymore. *cough*
     
@@ -1059,12 +1121,15 @@ You go check on your guest and find her right where you left her, still soundly 
 ->END
 === betrayal_ending ===
 
+    #Show Eira
     #Speaker Narrator
     You tell the party about Eira. They slowly sneak around the house, the elven lady throws some kind of bombs that feel the house with a bluish smoke to the brim in but a minute.
     
+    #Emotion Happy
     #Speaker Narrator
     Eira comes out of the house hand in her mouth coughing heavily and looks at you. A stream of tears pours from her eyes as she clutches her chest.
     
+    #Emotion Cry
     #Speaker Eira
     It wasn't your fault.
     
@@ -1080,6 +1145,7 @@ You go check on your guest and find her right where you left her, still soundly 
     
 === flee ===
 
+    #Show Eira
     #Speaker Narrator
 You get back into your house and close the door. In the living room you find Eira, trembling with fear in the couch. You sit next to her.
 
@@ -1091,8 +1157,9 @@ She seems almost in shock. How could you confort her?
     #Speaker Narrator
     You gently pat her head slowly until she seems to settle down.
     
+    #Emotion Overjoyed
     #Speaker Eira
-    No one's ever done that to me before. It's nice for a change.
+    No one's ever done that to me before... It's nice for a change.
     
     ~ affection++
     
@@ -1106,8 +1173,9 @@ She seems almost in shock. How could you confort her?
     #Speaker You
     It's fine, nothing will happen to you. I won't let it.
     
+    #Emotion Overjoyed
     #Speaker Eira
-    That feels nice. Thank you.
+    That feels nice...*sniff* Thank you.
     
     ~ affection++
     
@@ -1118,6 +1186,7 @@ She seems almost in shock. How could you confort her?
     #Speaker Narrator
     You get closer to her and slowly pull her in for a tight embrace. { affection >= 5: She hugs you back and y|Y}ou feel her tense body ease up between your arms.
     
+    #Emotion Overjoyed
     #Speaker Eira
     I'm so tired... { affection >= 5: Do you mind if we stay like this for a little longer?<br><br> You nod and stay silently holding her for a few minutes, before she composes herself. | }
     
@@ -1127,10 +1196,12 @@ She seems almost in shock. How could you confort her?
 
 * Keep it together, Eira.
     
+    #Emotion Indifferent
     -> continuation
 
 = continuation
 
+    #Emotion Happy
     #Speaker Eira
 I'm sorry about that. How did it go?
 
@@ -1139,6 +1210,7 @@ I'm sorry about that. How did it go?
 
 The way I see it we have two options. We can flee or we can stay and hope they don't catch on to us.
 
+    #Emotion Sad
 #Speaker Eira
 That can't be... What do you think the best course of action is?
 
@@ -1176,7 +1248,7 @@ That can't be... What do you think the best course of action is?
     #Speaker You
     Just leave the talking to me. I will figure something out, I promise.
     
-    #Speaker Eira
+    #Speaker Narrator
     The next morning comes and you invite the elven lady into your house as agreed upon last night.
     
     -> home_talk
@@ -1184,6 +1256,8 @@ That can't be... What do you think the best course of action is?
 
 = flee_attempt
 
+
+    #Emotion Sad
     #Place Outside
     #Speaker Narrator
     You wait until the arranged hour and get to the door. You step outside, but can see nothing through the veil of night. Eira follows you and the two of you begin to slowly make your way towards the forest.
@@ -1202,6 +1276,7 @@ That can't be... What do you think the best course of action is?
     #Speaker Narrator
 She quickly ducks and the bolt flies over her head. You take her hand help her up and continue running.
 
+    #Emotion Annoyed
 #Speaker Eira
 Hold on tightly.
 
@@ -1218,6 +1293,7 @@ After flying for a long time you land on a mountain. After a few minutes the mou
 
 I'm okay, you're okay, we're okay.
 
+    #Emotion Happy
     #Speaker Eira
 Seems like it, yes. What will you do now? You have been brought into all of this mess because of me.
 
@@ -1235,6 +1311,7 @@ Seems like it, yes. What will you do now? You have been brought into all of this
 
 = love
 
+    #Emotion Sad
     #Speaker Eira
 I tried so hard...
 
@@ -1244,6 +1321,7 @@ What did you try?
     #Speaker Eira
 I tried so hard not to fall in love with you, but you kept giving me a treatment no one has ever given a monster before. Before I knew it, I found myself caring deeply for you. And that feeling grew even stronger with time.
 
+    #Emotion Embarrassed
     #Speaker Eira
 I love you, crazily so.
 
@@ -1251,6 +1329,7 @@ I love you, crazily so.
 
     I wouldn't know how to love you, we are too different. I cannot say I don't feel anyhing for you, but this I feel is not the love a couple feels, but a platonic one.
     
+    #Emotion Sad
     #Speaker Eira
     I... Undestand. I'm fine with just standing by as we are, as long as I can stay with you.
     
@@ -1258,11 +1337,13 @@ I love you, crazily so.
 
 * I love you too.
 
+    #Emotion Overjoyed
     #Speaker Eira
     What?! Are you serious?! But I'm a monster and-
     
         ** [*Kiss her*]
         
+    #Emotion Blush
     #Speaker Narrator
             You fix your eyes into her lips, moving fast, making excuses out of fear of you loving her back. You feel the urge to make them stop and you move closer and closer until there is no space between hers and yours.
             
@@ -1284,6 +1365,7 @@ I love you, crazily so.
             
             Stop saying that. You are a normal woman who wants to live in peace. Who cares about your race, or would you say elves are not people? Or dwarves are not people? Or we humans? What makes you different?
             
+    #Emotion Smile
     #Speaker Narrator
             She wraps her arms around you tightly and you embrace her back. For a moment time seems to stop around you and you feel like nothing really matters as long as you can be together.
     
@@ -1291,6 +1373,7 @@ I love you, crazily so.
 
 = roamers
 
+    #Emotion Happy
     #Speaker Eira
 Would you walk this path of continuous hiding and running away with me?
 
@@ -1313,6 +1396,7 @@ I said no funny business, didn't I?
 
 = death
 
+    #Emotion Overjoyed
     #Speaker Narrator
 Eira lifts your body between her arms and looks at you in abject horror.
 
