@@ -3,6 +3,9 @@
 
 # Attributions
 
+
+## Backgrounds
+
 <a href="https://www.freepik.es/foto-gratis/hermoso-paisaje-nevado-montanas_11942564.htm#query=snowy%20mountain&position=2&from_view=search&track=sph">Wirestock image</a> on Freepik
 
 <a href="https://www.freepik.es/foto-gratis/vista-sobre-chimenea-lenos-encendidos-piel-piel-natural-suelo-junto-al-soporte-lenos-acogedora-habitacion_10909142.htm#query=cozy%20cabin%20living%20room&position=22&from_view=search&track=ais">user15285612 image</a> on Freepik
