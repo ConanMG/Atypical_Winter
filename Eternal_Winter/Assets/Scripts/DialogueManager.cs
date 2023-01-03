@@ -44,13 +44,27 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+
+        if (story.currentChoices.Count != 0)
+        {
+            if (!choicePanel.activeSelf)
+            {
+                ShowOptions();
+                StopAllCoroutines();
+                dialogueText.text = currentSentence;
+                isWriting = false;
+            }
+            else
+                return;
+        }
+
         if (!story.canContinue)
         {
-            if (!isWriting)
+            if (!isWriting && story.currentChoices.Count ==  0)
             {
                 EndDialogue();
-                return;
             }
+            return;
         }
 
         if (!isWriting)
@@ -63,14 +77,6 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            StopAllCoroutines();
-            dialogueText.text = currentSentence;
-            isWriting = false;
-        }
-
-        if (story.currentChoices.Count != 0)
-        {
-            ShowOptions();
             StopAllCoroutines();
             dialogueText.text = currentSentence;
             isWriting = false;
@@ -182,6 +188,7 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowOptions()
     {
+        RemoveChildren();
         for (int i = 0; i < story.currentChoices.Count; i++)
         {
             Choice choice = story.currentChoices[i];

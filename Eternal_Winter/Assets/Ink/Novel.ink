@@ -443,23 +443,23 @@ I was being hunted by a party of people. They attacked me and I fled, wounded, u
         
         ~ affection--
         
-        { not examination_outside && not accepted.examination_inside: -> bleed_out_end | ->morning }
+        { healed: -> bleed_out_end | ->morning }
     #Hide Eira
         
 === bleed_out_end ===
 
     #Body Bloody
     #Speaker Narrator
-    You wake up in the morning and go directly to your window to see if anything changed. However, the weather outside is still just as if it was winter. The blizzard rages on and the freezing cold still lingers in the air.
+    {not morning: You wake up in the morning and go directly to your window to see if anything changed. However, the weather outside is still just as if it was winter. The blizzard rages on and the freezing cold still lingers in the air.}
 
     #Speaker Narrator
     You go check on your guest and find her right where you left her, but everything is covered in blood now. She is not moving and when you go check she isn't breathing either. 
     
     #Speaker Narrator
-    It seems she was hiding a wound out of fear and mistrust and now is to late. You can't stop blaming yourself after that. What kind of doctor wouldn't notice such an amount of bloodloss. 
+    It seems { examination_outside or accepted.examination_inside: the wound she was hiding was more severe than you had imagined and you didn't treat it. | she was hiding a wound out of fear or mistrust and you didn't aid her. } Now it's too late. You can't stop blaming yourself after that. What kind of doctor wouldn't notice such an amount of bloodloss. 
     
     #Speaker Narrator
-    You closed your clinic that day and fell into a spiral of self-loathing for a while.
+    You closed your clinic that day and fell into a spiral of self-loathing for a while, blaming what happened to your ineptitude.
     
     -> END
     
@@ -476,7 +476,7 @@ You go check on your guest and find her right where you left her, still soundly 
     -> morning_choices
 
     = morning_choices
-        * [\*Check her wound*]
+        * { examined } [\*Check her wound*]
             
     #Speaker Narrator
             You slowly scan her wound up and down. It looks much better after your treatment and a good night sleep.
@@ -494,6 +494,8 @@ You go check on your guest and find her right where you left her, still soundly 
             
     #Speaker Narrator
             You prepare breakfast and ready yourself up for work. { wake_up: -> work | -> wake_up }
+            
+    * -> work
             
 === wake_up ===
     
