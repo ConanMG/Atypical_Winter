@@ -1,4 +1,4 @@
-# Eternal_Winter
+# Atypical Winter
  Visual novel submission to Winter Jam 2022
 
 # Attributions
