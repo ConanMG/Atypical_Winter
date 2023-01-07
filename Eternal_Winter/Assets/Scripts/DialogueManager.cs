@@ -237,6 +237,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        RemoveChildren();
         StartCoroutine(TypeWriter("THE END"));
 
         choicePanel.SetActive(true);
